@@ -1,11 +1,20 @@
 
+// Called function checks if input is an integer, and if only so calls the actual factorial implementation - for reducing time complexity with decision during recursive function call
 function factorialize(num) {
-  if (num > 0 && Number.isInteger(num)) {  // further check with Logical "And" to remove output for boolean "true" and floats 
-    return num * factorialize(num - 1);
-  } else if (num === 0) {  // Strict equality check to weed out errorneous output based on empty string, boolean values.
-    return 1;
+  if (Number.isInteger(num)) {
+    return fact(num);
   } else {
-     return num;
+    return NaN;
+    
+  }
+}
+
+// Actual factorial implementaion
+function fact(num) {
+  if (num > 0) {
+    return num * fact(num - 1);
+  } else {
+    return 1;
   }
 }
 /*
