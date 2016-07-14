@@ -5,18 +5,8 @@ Remember, you can iterate through an array with a simple for loop, and access ea
 */
 
 function largestOfFour(arr) {
-  collectionArr = [];
-  
-  for (var i = 0; i < arr.length; i++) {
-    collectionArr[i] = arr[i][0]; // Setting to initial sub array value temporarily for subseuent comparison
-    for (var j = 0; j < arr[i].length; j++) {
-      if (collectionArr[i] < arr[i][j])
-        collectionArr[i] = arr[i][j];
-    }
-  }
-  
-  return collectionArr;
-}
+  return arr.map(function(subArray) {return Math.max.apply(null,subArray);});
+} 
 
 // tests
 console.log(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]).toString() === [27,5,39,1001].toString());
