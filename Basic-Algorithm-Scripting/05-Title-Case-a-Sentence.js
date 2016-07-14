@@ -6,11 +6,7 @@ For the purpose of this exercise, you should also capitalize connecting words li
 
 function titleCase(str) {
   if (typeof str === 'string') {
-    return str.toLowerCase().split(' ').map(function(element) {
-      elementArr = element.split('');
-      elementArr[0] = elementArr[0].toUpperCase();
-      return elementArr.join('');
-    }).join(' ');
+    return str.toLowerCase().split(' ').map(element => element.charAt(0).toUpperCase() + element.substring(1)).join(' ');
   } else {
     return null;
   }
