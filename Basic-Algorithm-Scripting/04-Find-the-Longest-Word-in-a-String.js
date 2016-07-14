@@ -1,13 +1,7 @@
 
 function findLongestWord(str) {
   if(typeof str === 'string') {	// checking to see if the given arguement is a string, else return "null"
-    var strArray = str.split(" ");
-    var maxLength = 0, n = strArray.length;
-    for (var i = 0; i < n; i++) {
-      if (maxLength < strArray[i].length) 
-      	maxLength = strArray[i].length;
-    }
-    return maxLength;
+	return Math.max.apply(null, str.split(" ").map(element => element.length));
   } else {
     return null;
   }
