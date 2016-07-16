@@ -6,7 +6,7 @@ This challenge can be solved with the .endsWith() method, which was introduced i
 
 function confirmEnding(str, target) {
   if (typeof str === 'string' && typeof target === 'string') {
-    return str.substring(str.length - target.length) === target;
+    return str.lastIndexOf(target) === (str.length - target.length);
   } else {
     return null;
   }
