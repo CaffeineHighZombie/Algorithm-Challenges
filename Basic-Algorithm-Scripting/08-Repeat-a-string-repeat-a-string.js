@@ -3,12 +3,15 @@ Repeat a given string (first argument) num times (second argument). Return an em
 */
 
 function repeatStringNumTimes(str, num) {
-  var resultStr = '';
-  while (num > 0) {
-    resultStr += str;
-    num--;
-  }
-  return resultStr;
+	if (typeof str === 'string' && !Number.isNaN(num)) {
+  		if (num >= 0) {
+      		return str.repeat(num);
+      	} else {
+      		return "";
+      	}
+	} else {
+		return null;
+	}
 }
 
 // test
