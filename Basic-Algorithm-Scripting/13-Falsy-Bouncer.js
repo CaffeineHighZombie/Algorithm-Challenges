@@ -7,7 +7,7 @@ Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 function bouncer(arr) {
   var falsyValues = [false, null, 0, "", undefined, NaN];
   return arr.filter(function(element) {
-    return !falsyValues.includes(element);
+    return Boolean(element);
   });
 }
 
