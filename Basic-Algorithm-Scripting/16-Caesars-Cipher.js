@@ -9,16 +9,10 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 */
 
 function rot13(str) {
-  var lookupArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var equivalentArr = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
   return str.split('').map(function(word){
-    if (lookupArr.indexOf(word) != -1) {
-      return equivalentArr[lookupArr.indexOf(word)];
-    } else {
-      return word;
-    }
-  }).join('');
-  
+  	var wordCode = word.charCodeAt();
+  	return wordCode > 64 && wordCode < 91 ? String.fromCharCode(wordCode < 78 ? wordCode + 13 : wordCode - 13) : word;
+  }).join('');  
 }
 
 // tests
